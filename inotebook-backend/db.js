@@ -1,9 +1,9 @@
 const mongoose=require('mongoose');
 
-const mongoURI="mongodb://localhost:27017/";
+const mongoURI="mongodb://127.0.0.1:27017/inotebook";
 mongoose.set('strictQuery', true);
 const connectToMongo=()=>{
-    mongoose.connect(mongoURI,()=>{
+    mongoose.connect(mongoURI, ()=>{
         console.log("Connected to mongo successfully");
     })
 }
