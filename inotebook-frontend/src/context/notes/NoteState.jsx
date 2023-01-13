@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import NoteContext from "./noteContext";
 
 const NoteState = (props) => {
@@ -13,7 +13,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "63c025f435fd02ca58f9d01a",
+      _id: "63c025f435fd02ca58f9dr01a",
       user: "63bf028e79415da34b094290",
       title: "Note 1",
       description: "Description 1",
@@ -22,7 +22,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "63c025f435fd02ca58f9d01a",
+      _id: "63c025f435fd02eca58f9d01a",
       user: "63bf028e79415da34b094290",
       title: "Note 1",
       description: "Description 1",
@@ -31,7 +31,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "63c025f435fd02ca58f9d01a",
+      _id: "63c025f435fd0f2ca58f9d01a",
       user: "63bf028e79415da34b094290",
       title: "Note 1",
       description: "Description 1",
@@ -40,7 +40,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "63c025f435fd02ca58f9d01a",
+      _id: "63c025f435fd0w2ca58f9d01a",
       user: "63bf028e79415da34b094290",
       title: "Note 1",
       description: "Description 1",
@@ -49,7 +49,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "63c025f435fd02ca58f9d01a",
+      _id: "63c025f4g35fd02ca58f9d01a",
       user: "63bf028e79415da34b094290",
       title: "Note 1",
       description: "Description 1",
@@ -65,13 +65,33 @@ const NoteState = (props) => {
       tag: "General",
       date: "2023-01-13T20:28:58.813Z",
       __v: 0,
-    }
+    },
   ];
 
   const [notes, setNotes] = useState(notesInitial);
 
+  // Add a note
+  const addNote = (title, description, tag) => {
+    const note = {
+      _id: "63c1bf0ab4cf2ad157d41c7d",
+      user: "63bf028e79415da34b094290",
+      title: title,
+      description: description,
+      tag: tag,
+      date: "2023-01-13T20:28:58.813Z",
+      __v: 0,
+    };
+    setNotes(notes.concat(note));
+  };
+
+  // Delete a note
+  const deleteNote = () => {};
+
+  // Edit a note
+  const editNote = () => {};
+
   return (
-    <NoteContext.Provider value={{ notes, setNotes }}>
+    <NoteContext.Provider value={{ notes, addNote, editNote, deleteNote }}>
       {props.children}
     </NoteContext.Provider>
   );
